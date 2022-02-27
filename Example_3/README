@@ -11,11 +11,10 @@ Elements contained:
   - ComputeHSIC.m
   - rbf.m
 
+Data:
 Not in the folder. Due to size the data can't be included in the repository but it can be downloaded from:
- 
 https://www.cesm.ucar.edu/working_groups/CVC/cvdp-le/data-repository.html 
 
-Data:
   - LENS_tas_DJF_X_ct.csv
   - LENS_tas_DJF_Y_ct.csv
   - LENS_tas_DJF_M_ct.csv
