@@ -21,5 +21,6 @@ model.
   * Datasets
 
 ## References
+* A. Pérez-Suay, V. Laparra, G. Mateo-García, J. Muñoz-Marí, L. Gómez-Chova, and G. Camps-Valls. Fair kernel learning. In European Conference on Machine Learning (ECML), Skopje,Macedonia, 18-22 September 2017.
 
-
+* Z. Li, A. Perez-Suay, G. Camps-Valls, and D. Sejdinovic, Kernel Dependence Regularizers and Gaussian Processes with Applications to Algorithmic Fairness, ArXiv e-prints:1911.04322, 2019.
