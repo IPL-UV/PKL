@@ -1,0 +1,16 @@
+*Consistency with ancillary in situ data*
+
+This folder includes the code and data necessary to reproduce the example 2 in the paper.  
+
+Elements contained: 
+- Code (essentials):
+  - PKL.m
+  - Main code (Hyperspectral_Vegetation.m)
+  
+- Code (utils):
+  - ComputeHSIC.m
+  - assesment.m
+  - rbf.m
+  - colormap (orangewhitered.m)
+
+- Data: SPARC0304.mat
