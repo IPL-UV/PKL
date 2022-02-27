@@ -1,0 +1,15 @@
+*Consistency with models for biophysical parameter estimation.*
+
+This folder includes the code and data necessary to reproduce the example 1 in the paper.  
+
+Elements contained: 
+- Code (essentials):
+  - PKL.m
+  - Main code (Radiances_CHmodels.m)
+  
+- Code (utils):
+  - ComputeHSIC.m
+  - assesment.m
+  - rbf.m
+
+- Data: SeaBAM.mat
