@@ -1,1 +1,22 @@
+*Learning patterns of forced warming under uncertain climate variability*
 
+This folder includes the code to reproduce the example 3 in the paper.  
+
+Elements contained: 
+- Code (essentials):
+  - PKL.m
+  - Main code (Internal_Variability.m)
+  
+- Code (utils):
+  - ComputeHSIC.m
+  - assesment.m
+  - rbf.m
+
+Not in the folder. Due to size the data can't be included in the repository but it can be downloaded from:
+ 
+https://www.cesm.ucar.edu/working_groups/CVC/cvdp-le/data-repository.html 
+
+Data:
+  - LENS_tas_DJF_X_ct.csv
+  - LENS_tas_DJF_Y_ct.csv
+  - LENS_tas_DJF_M_ct.csv
