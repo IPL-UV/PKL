@@ -1,6 +1,3 @@
-% Kernel Fair Learning
-% FINAL VERSION - adapted to the suplementary variables experiment 
-
 function [res] = PKL(Xnt,ynt,X_train,y_train,Q_train,X_val,y_val,Q_val,X_test,y_test,Q_test,mus,lambdas,sigmas,cross_val,optimize_sq)
 
 % Length samples
@@ -88,10 +85,6 @@ Rs_krr = corr(y_test - y_hat_krr, Q_test, 'Type','Spearman');
 compute_kernel=true; normalize=false; nocco=false; 
 nhsic_krr = computeHSIC(y_hat_krr, Q_test, compute_kernel, normalize, nocco);
 
-%acc_wc = sqrt(mean((yte - K_test*alpha_krr).^2));
-% A) HSIC(Yhat,S) versio pseudo NOCCO
-%dep_wc = (1/nte^2)*alpha_krr'*K_test'*(HKq_testH*pinv(HKq_testH + epsilon*eye(nte)))*K_test*alpha_krr;
-
 %% Physics-aware Nonparametric Regression
 %% 1) Optimize  
 nhsic_q = zeros(l_sigmas,1);
@@ -123,7 +116,7 @@ if optimize_sq && ntr == nva % fprintf('Validation and training have diferent si
 else
     if ntr>5e2
         % if there are lots of samples, it will choose a sigma from an heuristic 
-        % stimator using a fraction of the samples. If not, it will use all the
+        % estimator using a fraction of the samples. If not, it will use all the
         % samples
         rp = randperm(ntr);
         xaux = X_train(rp(1:5e2),:);
@@ -149,20 +142,12 @@ alpha_pkl = cell(1,l_mus);
 
 epsilon = 1e-2; %it needs to be very small -2
 
-%HKyhatq_trainH = H_train*rbf(Q_train,X_train,sigma_q)*H_train;
-
 for k=1:l_mus
     fprintf('PKL: nº mu= %d/%d \n',k,l_mus)
     
     % Alphas KRR
     wd = (best_lambda*eye(ntr) + K_train + mus(k)*((HKq_trainH*pinv(HKq_trainH + epsilon*eye(ntr))))*HK_trainH)\(y_train);
-    %wd = (best_lambda*eye(ntr) + K_train + (mus(k)/ntr)*(Q_train'*Q_train)*HK_trainH)\(y_train);
-    %wd = (best_lambda*eye(ntr) + K_train + mus(k)*HK_trainH*((HKq_trainH*pinv(HKq_trainH + epsilon*eye(ntr)))))\(y_train);
-    %wd = (best_lambda*eye(ntr) + K_train + mus(k)*(HKyhatq_trainH*HKyhatq_trainH))\(y_train);
     alpha_pkl{k} = wd;
-    
-    %wd = (best_lambda*eye(ntr) + (eye(ntr)-mus(k)*((HKq_trainH*pinv(HKq_trainH + epsilon*eye(ntr))))*K_train + ...
-    %    mus(k)*((HKq_trainH*pinv(HKq_trainH + epsilon*eye(ntr)))*HK_trainH)))\(y_train);
     
     y_hat_pkl = K_test*wd;
     
