@@ -9,7 +9,6 @@ Elements contained:
   
 - Code (utils):
   - ComputeHSIC.m
-  - assesment.m
   - rbf.m
 
 Not in the folder. Due to size the data can't be included in the repository but it can be downloaded from:
