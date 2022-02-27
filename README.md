@@ -2,7 +2,7 @@
 
 ## Main goal
 
-This repo accompanies the method physics-aware kernel learning (PKL) for nonparametric regression. The 
+This repo accompanies the method physics-aware kernel learning (PKL) for nonparametric regression. 
 
 ## Our survey paper
 
