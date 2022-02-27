@@ -1,0 +1,4 @@
+Function of the PKL method and utils needed to execute it:
+
+- function to define the kernel matrices: rbf.m
+- function to compute HSIC: computeHSIC.m
